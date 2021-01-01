@@ -2,6 +2,7 @@
 
 @section('content')
 <!-- Slider Area Start Here -->
+<H1>THIS IS FROM ADAM</H1>
 <section class="ranna-slider-area">
     <div class="container">
         <div class="rc-carousel nav-control-layout2" data-loop="true" data-items="30" data-margin="5"
@@ -21,7 +22,8 @@
                     <p>{{$post->description}} </p>
                     <ul class="entry-meta">
                         <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}}</a></li>
-                        <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by <span>{{$post->user->firstName}}</span></a>
+                        <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by
+                                <span>{{$post->user->firstName}}</span></a>
                         </li>
                         <li><a href="#"><i class="fas fa-heart"></i><span>02</span> Likes</a></li>
                     </ul>
@@ -47,7 +49,8 @@
                         <p class="text-break">{{$post->description}} </p>
                         <ul class="entry-meta">
                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}}</a></li>
-                            <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by <span>{{$post->user->firstName}}</span></a>
+                            <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by
+                                    <span>{{$post->user->firstName}}</span></a>
                             </li>
                             <li><a href="#"><i class="fas fa-heart"></i><span>02</span> Likes</a></li>
                         </ul>
