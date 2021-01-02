@@ -30,7 +30,6 @@
                                 <img src='{{asset("image/users/$user->image")}}' alt="Blog Author" style="width: 182px; height: 182px;" class="rounded-circle media-img-auto">
                                 <div class="media-body">
                                         <h2 class="author-title">{{$user->firstName}} {{$user->lastName}}</h2>
-
                                     <div class="author-designation">
                                         <hr style="width: 45%; border: 1px solid tomato ; color: #ff4f57;"></div>
                                     <p>{{$user->bio}}</p>
