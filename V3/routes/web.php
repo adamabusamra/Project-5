@@ -65,6 +65,9 @@ Route::get('/recipes/{id}', 'CategoriesController@ShowRecipes');
 Route::get('/recipe/single/{id}', 'PostsController@SingleRecipes');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/author/{id}', 'UsersController@show');
+Route::get('/author/{id}/follow', 'FollowersController@followUser')->middleware('auth');
+Route::get('/author/{id}/unFollow', 'FollowersController@unFollowUser')->middleware('auth');
+//Route::get('/author/{id}/followers', 'FollowersController@show')->middleware('auth');
 
 Route::get('/about', function () {
     return view('public.about-us');
