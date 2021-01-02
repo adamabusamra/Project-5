@@ -62,7 +62,7 @@
                     <tr>
                         <th scope="row">{{$input['id']}}</th>
                         <td>{{$input['cat_name']}}</td>
-                        <td><img src='{{asset("/image/categories/$input->cat_image")}}' style="width: 80px;height:80px">
+                        <td><img src='{{asset("/public/categories/$input->cat_image")}}' style="width: 80px;height:80px">
                         </td>
                         <td><a href="../admin/edit/{{$input['id']}}"><button type="button"
                                     class="btn btn-primary">Edit</button></a></td>

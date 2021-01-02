@@ -64,7 +64,7 @@ class CategoriesController extends Controller
 
         $file = $request->cat_image->getClientOriginalExtension();
         $file_name = time() . '.' . $file;
-        $path = 'image/categories';
+        $path = 'public/categories';
         $request->cat_image->move($path, $file_name);
 
         category::create([

@@ -25,8 +25,12 @@ class post extends Model
     }
 
     public function likedBy($id){
-        
+       
         $user = User::find($id);
-        return $this->likes->contains('user_id',$user->id);
-    }
+        if (auth()->check()) {
+            return $this->likes->contains('user_id',$user->id);
+        }
+
+        
+}
 }

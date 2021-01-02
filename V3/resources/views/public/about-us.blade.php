@@ -26,22 +26,22 @@
                     <div class="section-heading heading-dark">
                         <h3 class="item-heading-big">About Us</h3>
                     </div>
-                    <p>Korem ipsum dolor sitter amet consectetuer adipiscing elitter Curabt
-                        ur ugueque habitant morbi tristique.</p>
+                    <p>Foodacity is a recipe blog written by passionate Chefs and kitchen lovers. Since its existence it has covered such diverse subjects.
+                        Interested in working with us? Occasionally we create sponsored posts for brands that are a good fit for Foodacity. We’re also available for recipe development & photography. Send us a quick email for more info!
+                        And by the way, this blog is for anyone who loves to cook!</p>
                     <div class="contact-address">
                         <ul>
                             <li>
                                 <div class="item-icon"><i class="fas fa-map"></i></div>
-                                House #111/B, Street #05, New East NewYork City,
-                                Near rebay resort -1111
+                                Amman, Jordan - 18111
                             </li>
                             <li>
                                 <div class="item-icon"><i class="far fa-envelope"></i></div>
-                                rannarecipes@gmail.com
+                                info@foodacity.com
                             </li>
                             <li>
                                 <div class="item-icon"><i class="fas fa-phone"></i></div>
-                                +123 5889 000 - 10, +123 8889 011 - 22
+                                +962 7777 000, +962 7777 011
                             </li>
                             <li>
                                 <div class="item-icon"><i class="fas fa-fax"></i></div>

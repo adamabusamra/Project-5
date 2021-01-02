@@ -119,7 +119,7 @@ class PostsController extends Controller
      */
     public function edit(post $post)
     {
-        //
+
     }
 
     /**

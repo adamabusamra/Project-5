@@ -6,8 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta http-equiv="Content-Language" content="en">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.
-        </title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{asset('public/img/favicon.png')}}">
+        <title>Foodacity Admin Dashboard</title>
         <meta name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
         <meta name="description" content="This is an example dashboard created using build-in elements and components.">
@@ -74,7 +75,8 @@
                                                 class="p-0 btn">
 
                                                 <img width="42" class="rounded-circle"
-                                                    src="{{asset('admin/images/avatars/1.jpg')}}" alt="">
+                                                    src='{{asset("admin/images")}}/{{Auth::guard('admin')->user()->image}}'
+                                                    alt="">
 
                                                 {{Auth::guard('admin')->user()->name}}
 
@@ -82,30 +84,12 @@
                                             </a>
                                             <div tabindex="-1" role="menu" aria-hidden="true"
                                                 class="dropdown-menu dropdown-menu-right">
-                                                <button type="button" tabindex="0" class="dropdown-item">User
-                                                    Account</button>
-
-                                                <div tabindex="-1" class="dropdown-divider"></div>
                                                 <a href="/admin/logout" style="text-decoration:none"><button
                                                         type="button" tabindex="0"
                                                         class="dropdown-item">logout</button></a>
                                             </div>
                                         </div>
                                         @endif
-                                    </div>
-                                    <div class="widget-content-left  ml-3 header-user-info">
-                                        <div class="widget-heading">
-                                            Alina Mclourd
-                                        </div>
-                                        <div class="widget-subheading">
-                                            VP People Manager
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-right header-user-info ml-3">
-                                        <button type="button"
-                                            class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                            <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -523,16 +507,7 @@
                                 <li class="app-sidebar__heading">Dashboards</li>
 
                                 <li class="app-sidebar__heading">Manage</li>
-                                @if(Auth::guard('admin')->user()->is_super_admin == 1)
-                                <li>
-                                    <a href="../admin/manageadmin">
-                                        <i class="metismenu-icon  pe-7s-user"></i>
 
-                                        Manage Admin
-                                    </a>
-
-                                </li>
-                                @endif
                                 <li>
                                     <a href="../admin/manage_users">
                                         <i class="metismenu-icon  pe-7s-users"></i>

@@ -2,8 +2,6 @@
 
 @section('content')
 <!-- Slider Area Start Here -->
-<H1>THIS IS FROM ADAM</H1>
-<h1>test</h1>
 <section class="ranna-slider-area">
     <div class="container">
         <div class="rc-carousel nav-control-layout2" data-loop="true" data-items="30" data-margin="5"
@@ -15,18 +13,34 @@
             data-r-extra-large="1" data-r-extra-large-nav="true" data-r-extra-large-dots="false">
             @foreach ($posts as $post)
             <div class="ranna-slider-content-layout1">
-                <figure class="item-figure"><a href="single-recipe1.html"><img style="height:518px; width:1110px;"
+                <figure class="item-figure"><a href="/recipe/single/{{$post->id}}"><img style="height:518px; width:1110px;"
                             src='{{asset("storage/postImages/$post->image")}}' alt="Product"></a></figure>
                 <div class="item-content">
                     <span class="sub-title"></span>
-                    <h2 class="item-title"><a href="single-recipe1.html">{{$post->title}}</a></h2>
+                    <h2 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$post->title}}</a></h2>
                     <p>{{$post->description}} </p>
                     <ul class="entry-meta">
                         <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}}</a></li>
                         <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by
                                 <span>{{$post->user->firstName}}</span></a>
                         </li>
-                        <li><a href="#"><i class="fas fa-heart"></i><span>02</span> Likes</a></li>
+                        @auth
+                                @if(!$post->likedBy(auth()->user()->id))
+                                  <li>
+                                <a href="/like/{{$post->id}}" class=" text-danger" style="font-size: 1.5rem"><i class="fas fa-heart">Like</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @else
+                            <li>
+                           <a href="/like/delete/{{$post->id}}" class=" text-danger" style="font-size: 1.5rem" style="font-size: 1.5rem"><i class="fas fa-heart">Unlike</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endif
+                            @endauth
+
+                            @guest 
+                            <li>
+                                <a href="/login" class=" text-danger" style="font-size: 1.5rem"><i class="fas fa-heart">Like</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endguest
                     </ul>
                 </div>
             </div>
@@ -34,14 +48,13 @@
         </div>
     </div>
 </section>
-{{-- ///// POST DIV //////////////// --}}
 <section class="padding-bottom-18">
     <div class="container">
         <div class="row">
             @foreach ($posts as $post)
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="product-box-layout1">
-                    <figure class="item-figure"><a href="single-recipe1.html"><img
+                    <figure class="item-figure"><a href="/recipe/single/{{$post->id}}"><img
                                 style="width: 370px; height: 272.250px;"
                                 src='{{asset("storage/postImages/$post->image")}}' alt="Product"></a></figure>
                     <div class="item-content text-break">
@@ -53,7 +66,23 @@
                             <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by
                                     <span>{{$post->user->firstName}}</span></a>
                             </li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>02</span> Likes</a></li>
+                            @auth
+                                @if(!$post->likedBy(auth()->user()->id))
+                                  <li>
+                                <a href="/like/{{$post->id}}" class=" text-danger" style="font-size: 1.5rem"><i class="fas fa-heart">Like</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @else
+                            <li>
+                           <a href="/like/delete/{{$post->id}}" class=" text-danger" style="font-size: 1.5rem" style="font-size: 1.5rem"><i class="fas fa-heart">Unlike</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endif
+                            @endauth
+
+                            @guest 
+                            <li>
+                                <a href="/login" class=" text-danger" style="font-size: 1.5rem"><i class="fas fa-heart">Like</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>

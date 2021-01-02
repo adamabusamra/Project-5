@@ -40,18 +40,25 @@
                             <li class="single-meta"><a href="#"><i class="far fa-calendar-alt"></i>Nov 14,
                                     2018</a></li>
                             <li class="single-meta"><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by <span>{{$post->user->firstName}}</span></a></li>
-                            <li class="single-meta">
-                                <ul class="item-rating">
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-empty"><i class="fas fa-star"></i></li>
-                                    <li><span>9<span> / 10</span></span> </li>
-                                </ul>
+                            
+                            @auth
+                                @if(!$post->likedBy(auth()->user()->id))
+                                  <li>
+                                <a href="/like/{{$post->id}}" class=" text-danger" style="font-size: 1.7rem"><i class="fas fa-heart">Like</i></a><span>{{" ".$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
                             </li>
-                            <li class="single-meta"><a href="#"><i class="fas fa-heart"></i><span>02</span>
-                                    Likes</a></li>
+                            @else
+                            <li>
+                           <a href="/like/delete/{{$post->id}}" class=" text-danger" style="font-size: 1.7rem" style="font-size: 1.5rem"><i class="fas fa-heart">Unlike</i></a><span>{{" "
+                               .$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endif
+                            @endauth
+
+                            @guest 
+                            <li>
+                                <a href="/login" class=" text-danger" style="font-size: 1.7rem"><i class="fas fa-heart">Like</i></a><span>{{" ".$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endguest
                         </ul>
 
                     </div>
@@ -104,7 +111,10 @@
                                         </div>
                                         <div class="media-body space-sm">
                                             <div class="feature-title">VIEWS</div>
-                                            <div class="feature-sub-title">3,450</div>
+                                            <div class="feature-sub-title" id="demo"></div>
+                                            <script>
+                                                document.getElementById("demo").innerHTML = Math.floor(Math.random() * Math.floor(300));
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -126,14 +136,16 @@
 
                             @foreach($usersposts as $posts)
                             <div class="shop-box-layout1" >
-                                <div class="mask-item bg--light" >
+                                <div class=" bg--light" >
                                     <div class="item-figure">
+                                        <a href="/recipe/single/{{$posts->id}}">
                                         <img src='{{asset("storage/postImages/$posts->image")}}' style="height: 250px;">
+                                        </a>
                                     </div>
 
                                 </div>
                                 <div class="item-content">
-                                    <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$posts->title}}</a></h3>
+                                    <h3 class="item-title"><a href="/recipe/single/{{$posts->id}}">{{$posts->title}}</a></h3>
                                     <div class="item-price"><span class="currency"></span>{{$posts->category->cat_name}}</div>
                                 </div>
                             </div>
@@ -145,36 +157,5 @@
             </div>
         </section>
         <!-- Single Recipe Without Sidebar Area End Here -->
-        <!-- Instagram Start Here -->
-        <section class="instagram-feed-wrap">
-            <div class="instagram-feed-title"><a href="#"><i class="fab fa-instagram"></i>Follow On Instagram</a></div>
-            <ul class="instagram-feed-figure">
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure1.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure2.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure3.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure4.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure5.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure6.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure7.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure8.jpg')}}" alt="Social"></a>
-                </li>
-            </ul>
-        </section>
-        <!-- Instagram End Here -->
 
 @endsection

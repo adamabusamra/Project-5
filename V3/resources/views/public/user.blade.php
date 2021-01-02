@@ -30,8 +30,8 @@
                                 <img src='{{asset("image/users/$user->image")}}' alt="Blog Author" style="width: 182px; height: 182px;" class="rounded-circle media-img-auto">
                                 <div class="media-body">
                                         <h2 class="author-title">{{$user->firstName}} {{$user->lastName}}</h2>
-
-                                    <div class="author-designation">Dessert Specialist</div>
+                                    <div class="author-designation">
+                                        <hr style="width: 45%; border: 1px solid tomato ; color: #ff4f57;"></div>
                                     <p>{{$user->bio}}</p>
                                     <div class="float-right btn-lg btn btn-outline-primary">
                                         <a class="text-dark" href="/user/{{$user->id}}/">Edit Account</a>
@@ -46,11 +46,11 @@
                                 @foreach($posts as $post)
                                 <div class="col-md-6 col-sm-6 col-12">
                                 <div class="product-box-layout1">
-                                    <figure class="item-figure"><a href="single-recipe1.html"><img src='{{asset("storage/postImages/$post->image")}}'
+                                    <figure class="item-figure"><a href="/recipe/single/{{$post->id}}"><img src='{{asset("storage/postImages/$post->image")}}'
                                                 alt="Product"></a></figure>
                                     <div class="item-content">
                                         <span class="sub-title">{{$post->category->cat_name}}</span>
-                                        <h3 class="item-title"><a href="single-recipe1.html">{{$post->title}}</a></h3>
+                                        <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$post->title}}</a></h3>
                                         <p>{{$post->description}} </p>
                                         <ul class="entry-meta">
                                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}} Mins</a></li>
@@ -80,11 +80,11 @@
                                     data-r-extra-large-nav="true" data-r-extra-large-dots="false">
                                     <div class="featured-box-layout1">
                                         <div class="item-img">
-                                            <img src="img/product/product17.jpg" alt="Brand" class="img-fluid">
+                                            <img src="{{asset('public/img/product/product17.jpg')}}" alt="Brand" class="img-fluid">
                                         </div>
                                         <div class="item-content">
                                             <span class="ctg-name">BREAKFAST</span>
-                                            <h4 class="item-title"><a href="single-recipe1.html">Baked Garlic Prawn</a></h4>
+                                            <h4 class="item-title"><a href="">Baked Garlic Prawn</a></h4>
                                             <p>Definitiones noel ei verear intelle
                                                 gatpri civibus consequat area
                                                 refund efficiantue.</p>
@@ -92,11 +92,11 @@
                                     </div>
                                     <div class="featured-box-layout1">
                                         <div class="item-img">
-                                            <img src="img/product/product18.jpg" alt="Brand" class="img-fluid">
+                                            <img src="{{asset('public/img/product/product18.jpg')}}" alt="Brand" class="img-fluid">
                                         </div>
                                         <div class="item-content">
                                             <span class="ctg-name">DINNER</span>
-                                            <h4 class="item-title"><a href="single-recipe1.html">Baked Garlic Prawn</a></h4>
+                                            <h4 class="item-title"><a href="">Baked Garlic Prawn</a></h4>
                                             <p>Definitiones noel ei verear intelle
                                                 gatpri civibus consequat area
                                                 refund efficiantue.</p>
@@ -104,11 +104,11 @@
                                     </div>
                                     <div class="featured-box-layout1">
                                         <div class="item-img">
-                                            <img src="img/product/product19.jpg" alt="Brand" class="img-fluid">
+                                            <img src="{{asset('public/img/product/product19.jpg')}}" alt="Brand" class="img-fluid">
                                         </div>
                                         <div class="item-content">
                                             <span class="ctg-name">SALAD</span>
-                                            <h4 class="item-title"><a href="single-recipe1.html">Baked Garlic Prawn</a></h4>
+                                            <h4 class="item-title"><a href="">Baked Garlic Prawn</a></h4>
                                             <p>Definitiones noel ei verear intelle
                                                 gatpri civibus consequat area
                                                 refund efficiantue.</p>
@@ -140,7 +140,7 @@
                                 <ul class="block-list">
                                     <li class="single-item">
                                         <div class="item-img">
-                                            <a href="#"><img src="img/product/latest1.jpg" alt="Post"></a>
+                                            <a href="#"><img src="{{asset('public/img/product/latest1.jpg')}}" alt="Post"></a>
                                             <div class="count-number">1</div>
                                         </div>
                                         <div class="item-content">
@@ -153,7 +153,7 @@
                                     </li>
                                     <li class="single-item">
                                         <div class="item-img">
-                                            <a href="#"><img src="img/product/latest2.jpg" alt="Post"></a>
+                                            <a href="#"><img src="{{asset('public/img/product/latest2.jpg')}}" alt="Post"></a>
                                             <div class="count-number">2</div>
                                         </div>
                                         <div class="item-content">
@@ -166,7 +166,7 @@
                                     </li>
                                     <li class="single-item">
                                         <div class="item-img">
-                                            <a href="#"><img src="img/product/latest3.jpg" alt="Post"></a>
+                                            <a href="#"><img src="{{asset('public/img/product/latest3.jpg')}}" alt="Post"></a>
                                             <div class="count-number">3</div>
                                         </div>
                                         <div class="item-content">
@@ -179,7 +179,7 @@
                                     </li>
                                     <li class="single-item">
                                         <div class="item-img">
-                                            <a href="#"><img src="img/product/latest4.jpg" alt="Post"></a>
+                                            <a href="#"><img src="{{asset('public/img/product/latest4.jpg')}}" alt="Post"></a>
                                             <div class="count-number">4</div>
                                         </div>
                                         <div class="item-content">
@@ -201,55 +201,55 @@
                                 <ul>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure9.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure9.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure10.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure10.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure11.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure11.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure12.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure12.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure13.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure13.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure14.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure14.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure15.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure15.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure16.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure16.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="item-box">
-                                            <img src="img/social-figure/social-figure17.jpg" alt="Social Figure" class="img-fluid">
+                                            <img src="{{asset('public/img/social-figure/social-figure17.jpg')}}" alt="Social Figure" class="img-fluid">
                                             <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
