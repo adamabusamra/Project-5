@@ -75,7 +75,7 @@
                                                 class="p-0 btn">
 
                                                 <img width="42" class="rounded-circle"
-                                                    src='{{asset("/image/")}}/{{Auth::guard('admin')->user()->image}}'
+                                                    src='{{asset("admin/images")}}/{{Auth::guard('admin')->user()->image}}'
                                                     alt="">
 
                                                 {{Auth::guard('admin')->user()->name}}

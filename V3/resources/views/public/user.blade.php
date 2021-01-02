@@ -30,8 +30,8 @@
                                 <img src='{{asset("image/users/$user->image")}}' alt="Blog Author" style="width: 182px; height: 182px;" class="rounded-circle media-img-auto">
                                 <div class="media-body">
                                         <h2 class="author-title">{{$user->firstName}} {{$user->lastName}}</h2>
-
-                                    <div class="author-designation">Dessert Specialist</div>
+                                    <div class="author-designation">
+                                        <hr style="width: 45%; border: 1px solid tomato ; color: #ff4f57;"></div>
                                     <p>{{$user->bio}}</p>
                                     <div class="float-right btn-lg btn btn-outline-primary">
                                         <a class="text-dark" href="/user/{{$user->id}}/">Edit Account</a>
@@ -46,11 +46,11 @@
                                 @foreach($posts as $post)
                                 <div class="col-md-6 col-sm-6 col-12">
                                 <div class="product-box-layout1">
-                                    <figure class="item-figure"><a href="single-recipe1.html"><img src='{{asset("storage/postImages/$post->image")}}'
+                                    <figure class="item-figure"><a href="/recipe/single/{{$post->id}}"><img src='{{asset("storage/postImages/$post->image")}}'
                                                 alt="Product"></a></figure>
                                     <div class="item-content">
                                         <span class="sub-title">{{$post->category->cat_name}}</span>
-                                        <h3 class="item-title"><a href="single-recipe1.html">{{$post->title}}</a></h3>
+                                        <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$post->title}}</a></h3>
                                         <p>{{$post->description}} </p>
                                         <ul class="entry-meta">
                                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}} Mins</a></li>
