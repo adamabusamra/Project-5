@@ -44,7 +44,7 @@
                     <div class="item-content text-break">
                         <span class="sub-title">{{$post->category->cat_name}}</span>
                         <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$post->title}}</a></h3>
-                        <p class="text-break" style="text-align: justify">{{$post->description}} </p>
+                        <p class="text-break">{{$post->description}} </p>
                         <ul class="entry-meta">
                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}}</a></li>
                             <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by
