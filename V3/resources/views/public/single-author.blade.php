@@ -71,11 +71,12 @@
                                 <div class="col-md-6 col-sm-6 col-12">
                                 <div class="product-box-layout1">
                                     <figure class="item-figure"><a href="/recipe/single/{{$post->id}}"><img src='{{asset("storage/postImages/$post->image")}}'
-                                                alt="Product"></a></figure>
+                                                alt="Product" style="width: 370px; height: 272.250px;"></a></figure>
+                                                
                                     <div class="item-content">
                                         <span class="sub-title">{{$post->category->cat_name}}</span>
                                         <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$post->title}}</a></h3>
-                                        <p>{{$post->description}} </p>
+                                        <p style="text-align: justify">{{$post->description}} </p>
                                         <ul class="entry-meta">
                                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}} Mins</a></li>
                                             <li><a href="#"><i class="fas fa-user"></i>by <span>{{$post->user->firstName}}</span></a></li>
