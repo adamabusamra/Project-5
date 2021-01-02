@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row gutters-60">
                     <div class="col-lg-8">
-                        <form action="create_post" method="post" class="submit-recipe-form" enctype="multipart/form-data">
+                        <form action="/create_post" method="post" class="submit-recipe-form" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label>Recipe Title</label>
@@ -59,7 +59,7 @@
                            @enderror
                             <div class="form-group">
                                 <label for="recipe">Recipe</label>
-                                <textarea placeholder="Enter the Recipe" class="textarea form-control" placeholder="recipe" class="form-control" name="recipe" id="form-message"
+                                <textarea placeholder="Enter the Recipe" class="textarea form-control form-control" name="recipe" id="form-message"
                                           rows="7" cols="20"></textarea>
                             </div>
                             @error('recipe')

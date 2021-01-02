@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d8bcae9-4dea-4153-8a2a-94224ae15dca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/publicmain.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/publicmain.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/single-author.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/single-author.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/public/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/public/submit-recipe.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/public/submit-recipe.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -143,7 +152,8 @@
       <workItem from="1609543010947" duration="779000" />
       <workItem from="1609546394747" duration="34000" />
       <workItem from="1609546431684" duration="4072000" />
-      <workItem from="1609558326539" duration="167000" />
+      <workItem from="1609558326539" duration="228000" />
+      <workItem from="1609558781496" duration="1073000" />
     </task>
     <servers />
   </component>
