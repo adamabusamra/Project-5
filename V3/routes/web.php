@@ -80,3 +80,5 @@ Route::post('/user/{id}/update', 'UsersController@update');
 Route::get('/about', function () {
     return view('public.about-us');
 });
+Route::get('/like/{id}', 'PostLikeController@store');
+Route::get('/like/delete/{id}', 'PostLikeController@destroy');
