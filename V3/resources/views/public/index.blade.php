@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Slider Area Start Here -->
-<H1>THIS IS FROM ADAM</H1>
+<H1>THIS IS FROM marya</H1>
 <h1>test</h1>
 <section class="ranna-slider-area">
     <div class="container">
