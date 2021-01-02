@@ -129,9 +129,11 @@
 
                             @foreach($usersposts as $posts)
                             <div class="shop-box-layout1" >
-                                <div class="mask-item bg--light" >
+                                <div class=" bg--light" >
                                     <div class="item-figure">
+                                        <a href="/recipe/single/{{$posts->id}}">
                                         <img src='{{asset("storage/postImages/$posts->image")}}' style="height: 250px;">
+                                        </a>
                                     </div>
 
                                 </div>
