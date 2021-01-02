@@ -65,7 +65,7 @@ class PostsController extends Controller
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
             $filename = 'post_image' . '_' . time() . '.' . $ext;
-            $file->storeAs('public/postImages', $filename);
+            $file->storeAs('storage/postImages', $filename);
         } else {
 
             $filename = 'noimage.png';
@@ -118,7 +118,7 @@ class PostsController extends Controller
      */
     public function edit(post $post)
     {
-        //
+
     }
 
     /**

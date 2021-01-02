@@ -104,7 +104,10 @@
                                         </div>
                                         <div class="media-body space-sm">
                                             <div class="feature-title">VIEWS</div>
-                                            <div class="feature-sub-title">3,450</div>
+                                            <div class="feature-sub-title" id="demo"></div>
+                                            <script>
+                                                document.getElementById("demo").innerHTML = Math.floor(Math.random() * Math.floor(300));
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +136,7 @@
 
                                 </div>
                                 <div class="item-content">
-                                    <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$posts->title}}</a></h3>
+                                    <h3 class="item-title"><a href="/recipe/single/{{$posts->id}}">{{$posts->title}}</a></h3>
                                     <div class="item-price"><span class="currency"></span>{{$posts->category->cat_name}}</div>
                                 </div>
                             </div>
@@ -145,36 +148,5 @@
             </div>
         </section>
         <!-- Single Recipe Without Sidebar Area End Here -->
-        <!-- Instagram Start Here -->
-        <section class="instagram-feed-wrap">
-            <div class="instagram-feed-title"><a href="#"><i class="fab fa-instagram"></i>Follow On Instagram</a></div>
-            <ul class="instagram-feed-figure">
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure1.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure2.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure3.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure4.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure5.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure6.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure7.jpg')}}" alt="Social"></a>
-                </li>
-                <li>
-                    <a href="single-recipe1.html"><img src="{{asset('public/img/social-figure/social-figure8.jpg')}}" alt="Social"></a>
-                </li>
-            </ul>
-        </section>
-        <!-- Instagram End Here -->
 
 @endsection

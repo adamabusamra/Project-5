@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Ranna | Submit Recipes</title>
+        <title>Foodacity | Best Recipes!</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Favicon -->
@@ -60,7 +60,7 @@
                                 <div class="site-logo-mobile">
                                     <a href="index.html" class="sticky-logo-light"><img
                                             src="{{asset('public/img/logo-light.png')}}" alt="Site Logo"></a>
-                                    <a href="index.html" class="sticky-logo-dark"><img
+                                    <a href="/" class="sticky-logo-dark"><img
                                             src="{{asset('public/img/logo-dark.png')}}" alt="Site Logo"></a>
                                 </div>
                                 <nav class="site-nav">
@@ -195,7 +195,7 @@
             <footer class="ranna-bg-dark">
                 <div class="container">
                     <div class="footer-logo">
-                        <a href="index.html"><img src="{{asset('public/img/logo-light.png')}}" class="img-fluid"
+                        <a href="/"><img src="{{asset('public/img/logo-light.png')}}" class="img-fluid"
                                 alt="footer-logo"></a>
                     </div>
                     <div class="footer-menu">

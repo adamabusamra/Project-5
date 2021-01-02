@@ -31,7 +31,8 @@
                                 <div class="media-body">
                                         <h2 class="author-title">{{$user->firstName}} {{$user->lastName}}</h2>
 
-                                    <div class="author-designation">Dessert Specialist</div>
+                                    <div class="author-designation">
+                                        <hr style="width: 45%; border: 1px solid tomato ; color: #ff4f57;"></div>
                                     <p>{{$user->bio}}</p>
                                     <ul class="author-social">
                                         <li>
@@ -70,11 +71,11 @@
                                 @foreach($posts as $post)
                                 <div class="col-md-6 col-sm-6 col-12">
                                 <div class="product-box-layout1">
-                                    <figure class="item-figure"><a href="single-recipe1.html"><img src='{{asset("storage/postImages/$post->image")}}'
+                                    <figure class="item-figure"><a href="/recipe/single/{{$post->id}}"><img src='{{asset("storage/postImages/$post->image")}}'
                                                 alt="Product"></a></figure>
                                     <div class="item-content">
                                         <span class="sub-title">{{$post->category->cat_name}}</span>
-                                        <h3 class="item-title"><a href="single-recipe1.html">{{$post->title}}</a></h3>
+                                        <h3 class="item-title"><a href="/recipe/single/{{$post->id}}">{{$post->title}}</a></h3>
                                         <p>{{$post->description}} </p>
                                         <ul class="entry-meta">
                                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}} Mins</a></li>
@@ -212,69 +213,6 @@
                                                     Mozzarella Oelette</a></h4>
                                             <div class="item-post-by"><a href="single-blog.html"><i class="fas fa-user"></i><span>by</span>
                                                     John Martin</a></div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <div class="section-heading heading-dark">
-                                <h3 class="item-heading">INSTAGRAM</h3>
-                            </div>
-                            <div class="widget-instagram">
-                                <ul>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure9.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure10.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure11.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure12.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure13.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure14.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure15.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure16.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="item-box">
-                                            <img src="img/social-figure/social-figure17.jpg" alt="Social Figure" class="img-fluid">
-                                            <a href="#" class="item-icon"><i class="fab fa-instagram"></i></a>
                                         </div>
                                     </li>
                                 </ul>
