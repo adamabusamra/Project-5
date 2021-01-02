@@ -10,7 +10,7 @@ class AdminsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin_auth');
+        // $this->middleware('admin_auth');
         $this->middleware('super_admin_auth');
     }
 

@@ -75,7 +75,8 @@
                                                 class="p-0 btn">
 
                                                 <img width="42" class="rounded-circle"
-                                                    src='{{asset("admin/images")}}/{{Auth::guard('admin')->user()->image}}' alt="">
+                                                    src='{{asset("admin/images")}}/{{Auth::guard('admin')->user()->image}}'
+                                                    alt="">
 
                                                 {{Auth::guard('admin')->user()->name}}
 
@@ -506,16 +507,7 @@
                                 <li class="app-sidebar__heading">Dashboards</li>
 
                                 <li class="app-sidebar__heading">Manage</li>
-                                @if(Auth::guard('admin')->user()->is_super_admin == 1)
-                                <li>
-                                    <a href="../admin/manageadmin">
-                                        <i class="metismenu-icon  pe-7s-user"></i>
 
-                                        Manage Admin
-                                    </a>
-
-                                </li>
-                                @endif
                                 <li>
                                     <a href="../admin/manage_users">
                                         <i class="metismenu-icon  pe-7s-users"></i>

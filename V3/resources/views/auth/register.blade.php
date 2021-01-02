@@ -8,7 +8,7 @@
                 <div class="col-lg-8">
                     <div class="login-box-layout1">
                         <div class="section-heading heading-dark">
-                            <h2 class="item-heading">REGISTER FORM</h2>
+                            <h2 class="item-heading">JOIN FOODACITY!</h2>
                         </div>
                         <form class="login-form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf

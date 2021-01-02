@@ -11,72 +11,64 @@
 |
 */
 
-//Route::get('/test', 'postsController@test');
 
-Route::get('/admin/index', function () {
-    return view('dashboardviews.index');
-});
 Route::get('/', 'PostsController@home');
+
+//Admin group
+
 Route::get('/admin/login/show', 'Auth\AdminLoginController@showAdminLogin');
 Route::post('/admin/login/submit', 'Auth\AdminLoginController@login');
 Route::get('/admin/logout', 'Auth\AdminLoginController@logout');
 
+Route::group(['prefix' => 'admin', 'middleware' => ['admin_auth']], function () {
+    Route::get('index', function () {
+        return view('dashboardviews.index');
+    });
 
-/*
-|
-| Dashboard Manage Admin Routes
-|
-*/
-Route::get('/admin/manageadmin', 'AdminsController@index');
-Route::post('/admin/manageadmin/store', 'AdminsController@store');
-Route::get('/admin/manageadmin/{id}/delete', 'AdminsController@destroy');
-Route::get('/admin/manageadmin/{id}/edit', 'AdminsController@edit');
-Route::post('/admin/manageadmin/{id}/update', 'AdminsController@update');
+    // Manage Admin Routes
+    Route::get('manageadmin', 'AdminsController@index');
+    Route::post('manageadmin/store', 'AdminsController@store');
+    Route::get('manageadmin/{id}/delete', 'AdminsController@destroy');
+    Route::get('manageadmin/{id}/edit', 'AdminsController@edit');
+    Route::post('manageadmin/{id}/update', 'AdminsController@update');
 
-/*
-|
-| Dashboard Manage Categories Routes
-|
-*/
-Route::get('/admin/categories/{id}', 'CategoriesController@destroy');
-Route::get('/admin/edit/{id}', 'CategoriesController@updateView')->name('admin.edit');
-Route::post('/admin/edit/{id}', 'CategoriesController@update')->name('admin.edit.submit');
-Route::post('/admin/categories', 'CategoriesController@store');
-Route::get('/admin/categories', 'CategoriesController@create');
-Route::get('/categories', 'CategoriesController@CategoriesCreate');
+    //Dashboard Manage Categories Routes
+    Route::get('categories/{id}', 'CategoriesController@destroy');
+    Route::get('edit/{id}', 'CategoriesController@updateView')->name('admin.edit');
+    Route::post('edit/{id}', 'CategoriesController@update')->name('admin.edit.submit');
+    Route::post('categories', 'CategoriesController@store');
+    Route::get('categories', 'CategoriesController@create');
 
-/*
-|
-| Dashboard Manage Users Routes
-|
-*/
-Route::get('/admin/manage_users', 'UsersController@index');
-Route::get('/admin/user_delete/{id}', 'UsersController@destroy');
+    // Dashboard Manage Users Routes
+    Route::get('manage_users', 'UsersController@index');
+    Route::get('user_delete/{id}', 'UsersController@destroy');
 
-/*
-|
-| Dashboard Manage Posts Routes
-|
-*/
-Route::get('/admin/manage_posts', 'PostsController@index');
-Route::get('/admin/post_delete/{id}', 'PostsController@destroy');
+    // Dashboard Manage Posts Routes
+    Route::get('manage_posts', 'PostsController@index');
+    Route::get('post_delete/{id}', 'PostsController@destroy');
+});
+//End admin group
+
 
 ///////////////////////////////////// Public Site /////////////////////////////////////////
-Route::get('/submit-recipe', 'PostsController@show');
-
-Route::post('/create_post', 'PostsController@create');
-Route::get('/recipes/{id}', 'CategoriesController@ShowRecipes');
-Route::get('/recipe/single/{id}', 'PostsController@SingleRecipes');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/submit-recipe', 'PostsController@show');
+    Route::post('/create_post', 'PostsController@create');
+    Route::get('/user/{id}', 'UsersController@edit');
+    Route::get('/my_account/{id}', 'UsersController@showSingleUser');
+    Route::post('/user/{id}/update', 'UsersController@update');
+});
 
 Auth::routes();
-
+Route::get('/categories', 'CategoriesController@CategoriesCreate');
+Route::get('/recipes/{id}', 'CategoriesController@ShowRecipes');
+Route::get('/recipe/single/{id}', 'PostsController@SingleRecipes');
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/author/{id}', 'UsersController@show');
+Route::get('/author/{id}/follow', 'FollowersController@followUser')->middleware('auth');
+Route::get('/author/{id}/unFollow', 'FollowersController@unFollowUser')->middleware('auth');
+//Route::get('/author/{id}/followers', 'FollowersController@show')->middleware('auth');
 
-Route::get('/user/{id}', 'UsersController@edit');
-Route::get('/my_account/{id}', 'UsersController@showSingleUser');
-Route::post('/user/{id}/update', 'UsersController@update');
 Route::get('/about', function () {
     return view('public.about-us');
 });
