@@ -19,4 +19,18 @@ class post extends Model
     {
         return $this->belongsTo(category::class);
     }
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function likedBy($id){
+       
+        $user = User::find($id);
+        if (auth()->check()) {
+            return $this->likes->contains('user_id',$user->id);
+        }
+
+        
+}
 }

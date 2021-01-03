@@ -40,18 +40,25 @@
                             <li class="single-meta"><a href="#"><i class="far fa-calendar-alt"></i>Nov 14,
                                     2018</a></li>
                             <li class="single-meta"><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by <span>{{$post->user->firstName}}</span></a></li>
-                            <li class="single-meta">
-                                <ul class="item-rating">
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-fill"><i class="fas fa-star"></i></li>
-                                    <li class="star-empty"><i class="fas fa-star"></i></li>
-                                    <li><span>9<span> / 10</span></span> </li>
-                                </ul>
+                            
+                            @auth
+                                @if(!$post->likedBy(auth()->user()->id))
+                                  <li>
+                                <a href="/like/{{$post->id}}" class=" text-danger" style="font-size: 1.7rem"><i class="fas fa-heart">Like</i></a><span>{{" ".$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
                             </li>
-                            <li class="single-meta"><a href="#"><i class="fas fa-heart"></i><span>02</span>
-                                    Likes</a></li>
+                            @else
+                            <li>
+                           <a href="/like/delete/{{$post->id}}" class=" text-danger" style="font-size: 1.7rem" style="font-size: 1.5rem"><i class="fas fa-heart">Unlike</i></a><span>{{" "
+                               .$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endif
+                            @endauth
+
+                            @guest 
+                            <li>
+                                <a href="/login" class=" text-danger" style="font-size: 1.7rem"><i class="fas fa-heart">Like</i></a><span>{{" ".$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endguest
                         </ul>
 
                     </div>

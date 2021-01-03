@@ -507,6 +507,16 @@
                                 <li class="app-sidebar__heading">Dashboards</li>
 
                                 <li class="app-sidebar__heading">Manage</li>
+                                @if(Auth::guard('admin')->check() && Auth::guard('admin')->user()->is_super_admin == 1)
+                                <li>
+                                    <a href="../admin/manageadmin">
+                                        <i class="metismenu-icon  pe-7s-user"></i>
+
+                                        Manage Admin
+                                    </a>
+
+                                </li>
+                                @endif
 
                                 <li>
                                     <a href="../admin/manage_users">

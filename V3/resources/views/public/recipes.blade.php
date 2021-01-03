@@ -48,7 +48,23 @@
                             <li><a href="#"><i class="fas fa-clock"></i>{{$post->preparation_time}} Mins</a></li>
                             <li><a href="/author/{{$post->user->id}}"><i class="fas fa-user"></i>by
                                     <span></span>{{$post->user->firstName}}</a></li>
-                            <li><a href="#"><i class="fas fa-heart"></i><span>02</span> Likes</a></li>
+                                    @auth
+                                    @if(!$post->likedBy(auth()->user()->id))
+                                  <li>
+                                <a href="/like/{{$post->id}}" class=" text-danger" style="font-size: 1.5rem"><i class="fas fa-heart">Like</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @else
+                            <li>
+                           <a href="/like/delete/{{$post->id}}" class=" text-danger" style="font-size: 1.5rem" style="font-size: 1.5rem"><i class="fas fa-heart">Unlike</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endif
+                            @endauth
+
+                            @guest 
+                            <li>
+                                <a href="/login" class=" text-danger" style="font-size: 1.5rem"><i class="fas fa-heart">Like</i></a><span>{{$post->likes->count()}} {{ Str::plural('like',$post->likes->count())}}</span>
+                            </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>

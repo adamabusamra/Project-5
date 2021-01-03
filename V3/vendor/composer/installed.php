@@ -7,10 +7,17 @@
     array (
     ),
 <<<<<<< HEAD
+<<<<<<< HEAD
+    'reference' => '37602fe74f0a0bdeb0543e857dda8e00cc2a49b6',
+=======
+    'reference' => 'a7ee5741d385bb5c3cd4e5862b0bda90680f6b3b',
+>>>>>>> ffcd028bd59e5bc546ec584380475c9cb022e6ff
+=======
     'reference' => '471a7fc2cf67cac8a670fd9d56bb491fd4e4ec5c',
 =======
     'reference' => 'a7ee5741d385bb5c3cd4e5862b0bda90680f6b3b',
 >>>>>>> 7faa13c60e729090cc84bd3805e6cbf9f2c936a0
+>>>>>>> ad7f304e5c61f7025cef26e656023c62efaf8210
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -375,10 +382,17 @@
       array (
       ),
 <<<<<<< HEAD
+<<<<<<< HEAD
+      'reference' => '37602fe74f0a0bdeb0543e857dda8e00cc2a49b6',
+=======
+      'reference' => 'a7ee5741d385bb5c3cd4e5862b0bda90680f6b3b',
+>>>>>>> ffcd028bd59e5bc546ec584380475c9cb022e6ff
+=======
       'reference' => '471a7fc2cf67cac8a670fd9d56bb491fd4e4ec5c',
 =======
       'reference' => 'a7ee5741d385bb5c3cd4e5862b0bda90680f6b3b',
 >>>>>>> 7faa13c60e729090cc84bd3805e6cbf9f2c936a0
+>>>>>>> ad7f304e5c61f7025cef26e656023c62efaf8210
     ),
     'laravel/tinker' => 
     array (

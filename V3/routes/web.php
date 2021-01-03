@@ -70,3 +70,5 @@ Route::get('/author/{id}/unFollow', 'FollowersController@unFollowUser')->middlew
 Route::get('/about', function () {
     return view('public.about-us');
 });
+Route::get('/like/{id}', 'PostLikeController@store');
+Route::get('/like/delete/{id}', 'PostLikeController@destroy');
